@@ -9,19 +9,23 @@ import { GEO_API_URL, geoApiOptions } from "../../api";
 const Search = ({ onSearchChange }) => {
 
     const [search, setSearch] = useState(null);
-
+    
     const loadOptions = (inputValue) => {
+
+        // Creates a GET request to the GEO API url (+ some filters) on the given inputValue (i.e. the user input into search bar)
         return fetch(
             `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
             geoApiOptions
         )
+
+        // Parses response as json : Visible using Network -> Response on webpage
         .then((response) => response.json())
         .then((response) => {
           return {
             options: response.data.map((city) => {
               return {
-                value: `${city.latitude} ${city.longitude}`,
-                label: `${city.name}, ${city.countryCode}`,
+                value: `${city.latitude} ${city.longitude}`,  // retrieves longitude and latitude from API's response
+                label: `${city.name}, ${city.countryCode}`,   // ditto with city name & country identifer
               };
             }),
           };

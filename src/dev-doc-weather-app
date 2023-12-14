@@ -20,3 +20,5 @@ call "<Search />" under App.js main to view
 - fetch calls use backticks (`) rather than string literals.
 
 (4) 
+
+tldr. webpage: takes user requested city/location -> GET request generated to GEO API -> Retrieve the city identifier and longitude/latitude --> GET request to weather API using long/lat info -> spits out weather forecast to user.
