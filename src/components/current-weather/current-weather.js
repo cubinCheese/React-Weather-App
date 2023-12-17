@@ -1,7 +1,7 @@
 import "./current-weather.css";
 
 // small box that displays details for the weather
-const CurrentWeather = () => {
+const CurrentWeather = ({data}) => {
   return (
     <div className="weather">
       <div className="top">
