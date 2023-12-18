@@ -36,15 +36,6 @@ function App() {
         // sets local state variables for weather and forecast, with data from API calls
         setCurrentWeather( {city: searchData.label, ...weatherResponse} ); // label comes from search.js
         setForecast( {city: searchData.label, ...forecastResponse} );
-        // setForecast(forecastResponse);
-        console.log("this is forecastResponse");
-        console.log(forecastResponse);
-        console.log("this is weatherResponse");
-        console.log(weatherResponse);
-        console.log("this is result of setForecast()");
-        console.log(forecast);
-        console.log(forecastResponse);
-        console.log(searchData.label); // searched city name
       })
 
       // chained to Promise.all
