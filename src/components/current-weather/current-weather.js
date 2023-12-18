@@ -43,11 +43,13 @@ const CurrentWeather = ({data}) => {
         <div>
           <div className="parameter-row">
             <span className="parameter-label">Min Temp</span>
-            <span className="parameter-value">{Math.round(data.main.temp_min)}°F</span>
+          </div>
+          <div className="parameter-row">
+            <span className="temperature-minMax">{Math.round(data.main.temp_min)}°F</span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Max Temp</span>
-            <span className="parameter-value">{Math.round(data.main.temp_max)}°F</span>
+            <span className="temperature-minMax">{Math.round(data.main.temp_max)}°F</span>
           </div>
         </div>
       </div>

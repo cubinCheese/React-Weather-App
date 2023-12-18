@@ -1,6 +1,7 @@
 import "./App.css";
 import Search from "./components/search/search";
 import CurrentWeather from "./components/current-weather/current-weather";
+import Forecast from "./components/forecast/forecast";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "./api";
 import { useState } from "react";
 
@@ -33,8 +34,17 @@ function App() {
 
         /* Spread operator (...) merges objects - removing duplicates with priority on object2 */
         // sets local state variables for weather and forecast, with data from API calls
-        setCurrentWeather({ city: searchData.label, ...weatherResponse }); // label comes from search.js
-        setForecast({ city: forecastResponse, ...weatherResponse });
+        setCurrentWeather( {city: searchData.label, ...weatherResponse} ); // label comes from search.js
+        setForecast( {city: searchData.label, ...forecastResponse} );
+        // setForecast(forecastResponse);
+        console.log("this is forecastResponse");
+        console.log(forecastResponse);
+        console.log("this is weatherResponse");
+        console.log(weatherResponse);
+        console.log("this is result of setForecast()");
+        console.log(forecast);
+        console.log(forecastResponse);
+        console.log(searchData.label); // searched city name
       })
 
       // chained to Promise.all
@@ -43,13 +53,14 @@ function App() {
   };
 
   // now get current weather and forecast for usage
-  console.log(currentWeather);
-  console.log(forecast);
+  //console.log(currentWeather);
+  //console.log(forecast);
 
   return (
     <div className="container">
       <Search onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />}
+      {forecast && <Forecast data={forecast} />}
     </div>
   );
 }
