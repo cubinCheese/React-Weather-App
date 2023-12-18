@@ -9,20 +9,7 @@ and implements their display */
     color: #fff;
     background-color: #333;
     margin: 20px auto 0 auto;
-    margin-right: 6px;
     padding: 0 20px 20px 20px;
-}
-
-.weather-adjacent-box {
-    width: 20px;
-    height: 180px;
-    border-radius: 6px;
-    box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
-    color: #fff;
-    background-color: #333;
-    margin: 20px auto 0 auto;
-    margin-left: 6px;
-    padding: 20px 20px 20px 20px;
 }
 
 /* flex display is necessary for wrapping lower div containers */
