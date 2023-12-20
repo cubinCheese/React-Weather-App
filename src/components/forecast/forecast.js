@@ -32,8 +32,6 @@ const Forecast = ({ data }) => {
   ).concat(WEEK_DAYS.slice(0, currentDayInWeek));
 
   // Slicing data list and later mapping them to their idx.
-  console.log("this is data.list")
-  console.log(data.list);
   const slicedData = data.list.slice(0, 7);
   return (
     <>
