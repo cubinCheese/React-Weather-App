@@ -8,14 +8,8 @@ and implements their display */
     box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
     color: #fff;
     background-color: #333;
-    margin: 20px auto 0 auto;
+    margin: 20px 10px 0 auto;
     padding: 0 20px 20px 20px;
-}
-
-/* flex display is necessary for wrapping lower div containers */
-.align {
-    display: flex;
-    align-items: center;
 }
 
 /* creates a box that allows content to be aligned parallel to eachother 

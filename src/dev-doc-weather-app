@@ -22,3 +22,25 @@ call "<Search />" under App.js main to view
 (4) 
 
 tldr. webpage: takes user requested city/location -> GET request generated to GEO API -> Retrieve the city identifier and longitude/latitude --> GET request to weather API using long/lat info -> spits out weather forecast to user.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Grab time stamp from geoDB api of searched location --> display as widget
+api needed
+
+<header indicating ${searched city} "current time">
+<time am/pm>
+<Today's weekDay>
+<Today's Date>

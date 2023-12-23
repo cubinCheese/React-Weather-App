@@ -1,0 +1,66 @@
+
+
+/* Defines div for current-location-time component (box) */
+.currLocation {
+    width: 300px;
+    border-radius: 6px;
+    box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+    color: #fff;
+    background-color: #333;
+    margin: 20px auto 0 10px;
+    padding: 0 20px 20px 20px;
+}
+
+.dateTime {
+    font-weight: 500;
+    font-size: 58px;
+    width: auto;
+    letter-spacing: -5px;
+    margin: auto auto;
+    display: flex;
+    margin-top: 10px; /* increases margin at top, btwn time display and border-edge */
+    margin-right: 19px; 
+}
+
+/* conflict prevention: Rule sets specified with lt (location time) */
+.lt-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* pulled from weather-description */
+.day-of-week{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    margin: 0;
+    text-align: right;
+    margin-right: 19px; /* aligns with Date-time margin */
+}
+/* remains unused */
+.lt-bottom {
+    margin-top: 77px;
+}
+
+.lt-parameter-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lt-parameter-label {
+    text-align: left;
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.lt-parameter-value {
+    text-align: right;
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.lt-weather-icon {
+    width: 100px;
+    transform: scaleX(-1);
+}
