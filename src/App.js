@@ -63,9 +63,11 @@ function App() {
   return (
     <div className="container">
       <Search onSearchChange={handleOnSearchChange} />
-      {currentWeather && <CurrentWeather data={currentWeather} />}
+      <div className="parallel-components">
+        {currentWeather && <CurrentWeather data={currentWeather} />}
+        {locationTime && <LocationTime data={locationTime} />}
+      </div>
       {forecast && <Forecast data={forecast} />}
-      {locationTime && <LocationTime data={locationTime} />}
     </div>
   );
 }
