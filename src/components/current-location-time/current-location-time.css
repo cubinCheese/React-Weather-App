@@ -22,22 +22,15 @@
     margin-right: 19px; 
 }
 
-.dayOfWeek {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    font-weight: 200;
-    font-size: 20px;
-    margin-bottom: 44px; /* this is how .lt-bottom gets pushed to bottom of box -- whole box grows pass (top-margin + bottom-margin) = 54px */
-}
-
 /* conflict prevention: Rule sets specified with lt (location time) */
 .lt-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.lt-weather-description {
+
+/* pulled from weather-description */
+.day-of-week{
     font-weight: 400;
     font-size: 14px;
     line-height: 1;

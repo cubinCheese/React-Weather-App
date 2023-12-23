@@ -27,7 +27,7 @@ function LocationTime({ data, weatherData }) {
         />
         <div>
           <p className="dateTime">{dateTimeIn12}</p>
-          <p className="lt-weather-description">{data.day_of_week}</p>
+          <p className="day-of-week">{data.day_of_week}</p>
         </div>
       </div>
       <div className="lt-bottom">
