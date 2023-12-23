@@ -74,7 +74,7 @@ const Forecast = ({ data }) => {
                 </div>
                 <div className="daily-details-grid-item">
                   <label>Wind Speed:</label>
-                  <label>{item.wind.speed} mph</label>
+                  <label>{Math.round(item.wind.speed)} mph</label>
                 </div>
                 {item.rain?.["3h"] !== undefined && (
                   <div className="daily-details-grid-item">
