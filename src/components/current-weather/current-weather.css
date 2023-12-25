@@ -12,6 +12,21 @@ and implements their display */
     padding: 0 20px 20px 20px;
 }
 
+@media (max-width: 768px) {
+    
+    /* duplicate of .weather, with margin-left adjustment. */
+    .weather {
+        width: 300px;
+        border-radius: 6px;
+        box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+        color: #fff;
+        background-color: #333;
+        margin: 20px 10px 0 auto;
+        padding: 0 20px 20px 20px;
+        margin-left: 10px;
+    }
+  }
+
 /* creates a box that allows content to be aligned parallel to eachother 
    e.g. city-name & description (parallels) icon image                */
 .top,

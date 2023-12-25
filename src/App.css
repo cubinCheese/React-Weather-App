@@ -3,8 +3,23 @@
   margin: 20px auto; 
 }
 
-.parallel-components{
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+  }
+}
+
+.parallel-components {
   display: flex;
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .parallel-components {
+    flex-direction: column;
+    align-items: center;
+  }
+}
