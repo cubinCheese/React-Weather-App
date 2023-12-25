@@ -35,7 +35,6 @@ const Forecast = ({ data }) => {
   const slicedData = data.list.slice(0, 7);
   return (
     <>
-      <label className="title">Daily</label>
       <Accordion allowZeroExpanded>
         {slicedData.map((item, idx) => (
           <AccordionItem key={idx}>
