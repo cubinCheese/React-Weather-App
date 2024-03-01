@@ -6,7 +6,7 @@ import LocationTime from "./components/current-location-time/current-location-ti
 import { WEATHER_API_KEY, WEATHER_API_URL } from "./api";
 import { worldTimeApiOptions, WORLDTIME_API_URL } from "./api";
 import { useState } from "react";
-import animatedBackground from "./public/gifs/raingirl.gif"; // Import the AnimatedBackground component
+import animatedBackground from './gifs/raingirl.gif'; // Import the AnimatedBackground component
 
 function App() {
   // Creates set-weather() and current-weather value() through useState
