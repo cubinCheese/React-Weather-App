@@ -14,7 +14,7 @@ const Search = ({ onSearchChange }) => {
 
         // Creates a GET request to the GEO API url (+ some filters) on the given inputValue (i.e. the user input into search bar)
         return fetch(
-            `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
+            `${GEO_API_URL}/cities?minPopulation=1&namePrefix=${inputValue}`,
             geoApiOptions
         )
 

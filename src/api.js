@@ -7,7 +7,7 @@
 export const geoApiOptions = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'e1bd02de68mshc7d5027fdcb6fbdp1b4e14jsnb59f1484faae',
+		'X-RapidAPI-Key': process.env.REACT_APP_GEO_API_KEY,
 		'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
 	}
 };
@@ -15,7 +15,7 @@ export const geoApiOptions = {
 export const worldTimeApiOptions = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'e1bd02de68mshc7d5027fdcb6fbdp1b4e14jsnb59f1484faae',
+		'X-RapidAPI-Key': process.env.REACT_APP_WORLD_TIME_API_KEY,
 		'X-RapidAPI-Host': 'world-time-by-api-ninjas.p.rapidapi.com'
 	}
 };
@@ -28,4 +28,4 @@ export const WORLDTIME_API_URL = 'https://world-time-by-api-ninjas.p.rapidapi.co
 
 
 // API keys
-export const WEATHER_API_KEY = 'e056ddfc3396bb3175ff69b51c1d56c9';
+export const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
