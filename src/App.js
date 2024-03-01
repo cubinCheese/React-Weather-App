@@ -2,10 +2,11 @@ import "./App.css";
 import Search from "./components/search/search";
 import CurrentWeather from "./components/current-weather/current-weather";
 import Forecast from "./components/forecast/forecast";
-import LocationTime from "./components/current-location-time/current-location-time"
+import LocationTime from "./components/current-location-time/current-location-time";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "./api";
-import { worldTimeApiOptions , WORLDTIME_API_URL } from "./api";
+import { worldTimeApiOptions, WORLDTIME_API_URL } from "./api";
 import { useState } from "react";
+import animatedBackground from "./public/gifs/raingirl.gif"; // Import the AnimatedBackground component
 
 function App() {
   // Creates set-weather() and current-weather value() through useState
@@ -43,10 +44,11 @@ function App() {
 
         /* Spread operator (...) merges objects - removing duplicates with priority on object2 */
         // sets local state variables for weather and forecast, with data from API calls
-        setCurrentWeather( {city: searchData.label, ...weatherResponse} ); // label comes from search.js
-        setForecast( {city: searchData.label, ...forecastResponse} );
+        setCurrentWeather({ city: searchData.label, ...weatherResponse }); // label comes from search.js
+        setForecast({ city: searchData.label, ...forecastResponse });
         setLocationTime({
-          city: searchData.label, ...worldTimeResponse
+          city: searchData.label,
+          ...worldTimeResponse,
         }); // each search will only have one corresponding world time
       })
 
@@ -58,16 +60,26 @@ function App() {
   // now get current weather and forecast for usage
   //console.log(currentWeather);
   //console.log(forecast);
-  console.log(locationTime)
+  console.log(locationTime);
 
   return (
-    <div className="container">
-      <Search onSearchChange={handleOnSearchChange} />
-      <div className="parallel-components">
-        {currentWeather && <CurrentWeather data={currentWeather} />}
-        {locationTime && <LocationTime data={locationTime} weatherData={currentWeather} />}
+    <div>
+      <img
+        src={animatedBackground}
+        alt="Animated Background"
+        className="animated-background"
+      />
+
+      <div className="container">
+        <Search onSearchChange={handleOnSearchChange} />
+        <div className="parallel-components">
+          {currentWeather && <CurrentWeather data={currentWeather} />}
+          {locationTime && (
+            <LocationTime data={locationTime} weatherData={currentWeather} />
+          )}
+        </div>
+        {forecast && <Forecast data={forecast} />}
       </div>
-      {forecast && <Forecast data={forecast} />}
     </div>
   );
 }

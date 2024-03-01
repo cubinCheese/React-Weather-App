@@ -18,3 +18,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\ (Note. if you're using WSL2, hot reloading won't work)
 
+# GIF Credits
+- A break in the Rain by Daydreamer94
