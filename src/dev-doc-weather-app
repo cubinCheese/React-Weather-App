@@ -1,4 +1,3 @@
-
 React.js / 
 
 (1) setup API keys
@@ -23,6 +22,20 @@ call "<Search />" under App.js main to view
 
 tldr. webpage: takes user requested city/location -> GET request generated to GEO API -> Retrieve the city identifier and longitude/latitude --> GET request to weather API using long/lat info -> spits out weather forecast to user.
 
+# Kind of a Dev Log - Weather App
+
+## May 12, 2025
+- Database was implemented - Firebase (cloud db)
+- the idea is to first utilize any cached data (based on searchData of user-input), then decide whether to fetch from an API, finally, we store the fetched data into the database.
+- Created '/firebase' directory for db/service related files
+- Created 'databaseService.js' : handles interactions with database
+- Created 'weatherService.js'  : handles interactions with APIs (weather/time)
+- Created 'firebaseConfig.js'  : database configs, api keys
+- Updated .env with api keys
+- Updated App.js 
+    - no longer handles API data fetching directly
+    - now calls upon databaseService.js and weatherService.js when weather data is needed
+    
 
 
 
