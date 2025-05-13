@@ -1,30 +1,47 @@
 // Handles interactions with your local database (e.g., Firebase Firestore, IndexedDB).
 
-import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
-
-const db = getFirestore();
+import { doc, setDoc, getDoc } from "firebase/firestore";
+import { db } from "./firebaseConfig";
 
 /**
  * Save weather data to Firestore.
  * @param {string} city - The city name (used as the document ID).
  * @param {Object} data - The weather data to save.
  */
-export const saveWeatherData = async (city, data) => {
-  const docRef = doc(db, "weather", city);
-  await setDoc(docRef, data);
+const saveCachedData = async (city, data) => {
+  try {
+    const docRef = doc(db, "weather", city);
+    await setDoc(docRef, data);
+    console.log(`Saved weather data for ${city}`);
+  } catch (error) {
+    console.error(`Failed to save weather data for ${city}:`, error);
+  }
 };
 
 /**
  * Get weather data from Firestore.
  * @param {string} city - The city name (used as the document ID).
- * @returns {Object|null} - The weather data, or null if not found.
+ * @returns {Object|null} - The weather data, or null if not found or on error.
  */
-export const getWeatherData = async (city) => {
-  const docRef = doc(db, "weather", city);
-  const docSnap = await getDoc(docRef);
-  if (docSnap.exists()) {
-    return docSnap.data();
-  } else {
-    return null; // No data found
+const getCachedData = async (city) => {
+  try {
+    const docRef = doc(db, "weather", city);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      console.log(`Fetched cached data for ${city}`);
+      return docSnap.data();
+    } else {
+      console.log(`No cached data found for ${city}`);
+      return null;
+    }
+  } catch (error) {
+    console.error(`Failed to get weather data for ${city}:`, error);
+    return null;
   }
+};
+
+// Export all functions as a single object
+export default {
+  saveCachedData,
+  getCachedData,
 };
