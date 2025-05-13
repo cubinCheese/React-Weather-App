@@ -15,12 +15,15 @@ import { saveWeatherData, getWeatherData } from "./firebase/databaseService";
 
 
 function App() {
+  console.log("App component rendered");
+
   // Creates set-weather() and current-weather value() through useState
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [locationTime, setLocationTime] = useState(null);
-
+  
   const handleOnSearchChange = async (searchData) => {
+    console.log("handleOnSearchChange triggered with:", searchData);
     const [lat, lon] = searchData.value.split(" ");
 
     try {
@@ -59,30 +62,37 @@ function App() {
   };
 
   // now get current weather and forecast for usage
-  //console.log(currentWeather);
-  //console.log(forecast);
+  console.log(currentWeather);
+  console.log(forecast);
   console.log(locationTime);
 
-  return (
-    <div>
-      <img
-        src={animatedBackground}
-        alt="Animated Background"
-        className="animated-background"
-      />
+  try {
+    return (
+      <div>
+        <img
+          src={animatedBackground}
+          alt="Animated Background"
+          className="animated-background"
+        />
 
-      <div className="container">
-        <Search onSearchChange={handleOnSearchChange} />
-        <div className="parallel-components">
-          {currentWeather && <CurrentWeather data={currentWeather} />}
-          {locationTime && (
-            <LocationTime data={locationTime} weatherData={currentWeather} />
-          )}
+        <div className="container">
+          <Search onSearchChange={handleOnSearchChange} />
+          <div className="parallel-components">
+            {currentWeather && <CurrentWeather data={currentWeather} />}
+            {locationTime && (
+              <LocationTime data={locationTime} weatherData={currentWeather} />
+            )}
+          </div>
+          {forecast && <Forecast data={forecast} />}
         </div>
-        {forecast && <Forecast data={forecast} />}
       </div>
-    </div>
-  );
-}
+    ); 
+  } catch (error) {
+    console.error("Error rendering App:", error);
+    return <p>Something went wrong!</p>;
+  }
+
+
+} 
 
 export default App;
